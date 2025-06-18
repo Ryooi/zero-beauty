@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo(0, 0);
     }, 10);
     
-    // 画像のスライドインアニメーション
+    // 画像のフェードインアニメーション
     setTimeout(function() {
         const mainImage = document.querySelector('.main-image');
         if (mainImage) {
-            mainImage.classList.add('slide-in');
+            mainImage.classList.add('fade-in');
         }
-    }, 300); // 300ms後にアニメーション開始
+    }, 500); // 500ms後にアニメーション開始
     
     const menuToggle = document.getElementById('menuToggle');
     const hamburger = menuToggle.querySelector('.hamburger');
@@ -132,4 +132,3 @@ function toggleAnswer(questionElement) {
     }
 }
 
- 
