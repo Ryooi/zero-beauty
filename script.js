@@ -1,21 +1,9 @@
 // メニューの開閉機能
 document.addEventListener('DOMContentLoaded', function() {
-    // 初回ページ読み込み時のみTOPセクションを表示
-    let hasInitialized = false;
-    if (!hasInitialized) {
-        setTimeout(function() {
-            window.scrollTo(0, 0);
-            const topSection = document.getElementById('top');
-            if (topSection) {
-                topSection.scrollIntoView({
-                    behavior: 'instant',
-                    block: 'start',
-                    inline: 'nearest'
-                });
-            }
-            hasInitialized = true;
-        }, 10);
-    }
+    // 初回ページ読み込み時にTOPにスクロール
+    setTimeout(function() {
+        window.scrollTo(0, 0);
+    }, 10);
     
     // 画像のスライドインアニメーション
     setTimeout(function() {
@@ -66,25 +54,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // セクション表示制御機能
-    function showSection(sectionId) {
-        // 全セクションを非表示
-        const allSections = document.querySelectorAll('.section');
-        allSections.forEach(section => {
-            section.style.display = 'none';
-        });
-        
-        // 指定されたセクションを表示
+    // セクションへのスムーススクロール機能
+    function scrollToSection(sectionId) {
         const targetSection = document.getElementById(sectionId);
         if (targetSection) {
-            if (targetSection.classList.contains('legal-section')) {
-                targetSection.classList.add('active');
-                targetSection.style.display = 'block';
-            } else {
-                targetSection.style.display = 'block';
-            }
-            
-            // セクションの先頭にスクロール
+            // セクションの先頭にスムーススクロール
             targetSection.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
@@ -99,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             const targetId = this.getAttribute('href').substring(1);
-            showSection(targetId);
+            scrollToSection(targetId);
         });
     });
 
@@ -116,9 +90,9 @@ document.addEventListener('DOMContentLoaded', function() {
             menuToggle.classList.remove('menu-open');
             navMenu.classList.remove('active');
             
-            // セクションを表示
+            // セクションにスクロール
             const targetId = this.getAttribute('href').substring(1);
-            showSection(targetId);
+            scrollToSection(targetId);
         });
     });
 });
