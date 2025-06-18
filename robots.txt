@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# サイトマップの場所
+Sitemap: https://zerobeauty.jp/sitemap.xml
+
+# 特定のファイルやディレクトリを除外（必要に応じて）
+# Disallow: /admin/
+# Disallow: /private/
+
+# 主要なページを優先的にクロール
+Allow: /index.html
+Allow: /privacy.html
+Allow: /terms.html
+Allow: /company.html
+
+# 画像ファイルもクロール許可
+Allow: /images/ 
