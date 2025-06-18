@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo(0, 0);
     }, 10);
     
-    // 画像のフェードインアニメーション
+    // 画像のスライドインアニメーション
     setTimeout(function() {
         const mainImage = document.querySelector('.main-image');
         if (mainImage) {
-            mainImage.classList.add('fade-in');
+            mainImage.classList.add('slide-in');
         }
-    }, 500); // 500ms後にアニメーション開始
+    }, 300); // 300ms後にアニメーション開始
     
     const menuToggle = document.getElementById('menuToggle');
     const hamburger = menuToggle.querySelector('.hamburger');
