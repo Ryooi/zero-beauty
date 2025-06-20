@@ -5,13 +5,29 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo(0, 0);
     }, 10);
     
-    // 画像のスライドインアニメーション
+    // 画像のフェードインアニメーション
     setTimeout(function() {
         const mainImage = document.querySelector('.main-image');
         if (mainImage) {
-            mainImage.classList.add('slide-in');
+            mainImage.classList.add('fade-in');
         }
-    }, 300); // 300ms後にアニメーション開始
+        
+        // HOME画面の写真も確実に表示
+        const homeImages = document.querySelectorAll('.home-image-1 img, .home-image-2 img');
+        homeImages.forEach(function(img) {
+            img.style.opacity = '1';
+            img.style.visibility = 'visible';
+            img.style.display = 'block';
+            
+            // 画像の読み込みエラーが発生した場合の処理
+            img.onerror = function() {
+                console.log('画像の読み込みに失敗しました:', img.src);
+                // エラー時は背景色で代替表示
+                img.style.backgroundColor = '#f0f0f0';
+                img.style.border = '1px solid #ddd';
+            };
+        });
+    }, 800); // 800ms後にアニメーション開始
     
     const menuToggle = document.getElementById('menuToggle');
     const hamburger = menuToggle.querySelector('.hamburger');
