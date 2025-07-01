@@ -2110,17 +2110,29 @@ body {
     }
     
 .home-image-zerobeauty {
-    position: absolute;
-    top: 120px;
+    position: fixed;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    width: 40%;
+    transform: translate(-50%, -50%);
+    width: 40vw;
+    max-width: 400px;
+    min-width: 180px;
     height: auto;
-    z-index: 2;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
 }
     
     .home-image-zerobeauty img {
-        height: 250px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
     }
     
     .home-catchcopy h1,
@@ -2650,17 +2662,9 @@ body {
     }
     
     .home-image-zerobeauty {
-        width: 60%;
-        height: 140px;
-        left: auto;
-        transform: none;
-        margin: 0 auto;
-    }
-    
-    .home-image-zerobeauty img {
-        height: 140px;
-        top: 120px;
-        left: 100%;
+        width: 70vw;
+        max-width: 300px;
+        min-width: 120px;
     }
     
     .home-catchcopy h1,
