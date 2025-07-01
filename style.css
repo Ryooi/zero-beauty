@@ -2109,20 +2109,17 @@ body {
         margin-bottom: 40px;
     }
     
-    .home-image-1 {
-        width: 40%;
-        top: 120px;
-        left: 100%;
-    }
+.home-image-zerobeauty {
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: auto;
+    z-index: 2;
+}
     
-    .home-image-2 {
-        width: 40%;
-        top: 120px;
-        left: 100%;
-    }
-    
-    .home-image-1 img,
-    .home-image-2 img {
+    .home-image-zerobeauty img {
         height: 250px;
     }
     
