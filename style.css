@@ -2110,21 +2110,18 @@ body {
     }
     
 .home-image-zerobeauty {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     width: 40vw;
     max-width: 400px;
     min-width: 180px;
     height: auto;
-    z-index: 100;
     display: flex;
     align-items: center;
     justify-content: center;
     background: none;
     box-shadow: none;
     border-radius: 0;
+    margin: 0 auto;
 }
     
     .home-image-zerobeauty img {
